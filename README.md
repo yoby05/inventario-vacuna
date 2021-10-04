@@ -42,6 +42,22 @@ Estos archivos una vez se definan cuál será su destino deben de copiar la ubic
 + ubicarse en la carpeta raíz de cada proyecto y ejecutar el comando maven (mvn clean install) de cada proyecto y se les genera un war dentro de la carpeta target siguiendo el orden inventario-vacuna-bdd,inventario-vacuna-dto,inventario-vacuna-utilitario,inventario-vacuna-ws,inventario-vacuna-web,inventario-vacuna-ws
 + La url para comenzar a utilizar el sistema es: http://localhost:5800/inventario-vacuna-login/
 + Ya estaría listo para comenzar la prueba.
++ Para acceder al sistema las credenciales son las siguientes:
+  1. usuario: kruger
+  2. pass: kruger
+ 
+## Activar Usuario
++ Cuando se activa un empleado, se verifica que el usuario sea único, luego el sistema automáticamente genera una clave de ingreso. Debido a que este proyecto respecto a lo que se pide es bastante corto está limitado a crear solo la clave y se almacena en base cifrada lo cual se necesita consumir un servicio para saber cual es la clave asignda al nuevo usuario. Cabe recarcar que la arquitectura planteada si es bastante compleja y en otras versiones de la misma se encuentra implementados crear roles, asignar roles, asignar acceso, personalización visual, envío de correo con diferentes plantillas, cambio de clave obligatoriala 1ra vez de ingresar y otras funcionalidades, las cuales no estarán presentes en el mismo debido a tiempo y a lo que se pedía.
+  + url del servicio para descifrar clave: http://164.68.124.161:8090/ws-utilitario/desencriptarClave
+    + debe ingresar a la base para copiar la clave cifrada\
+     trama Json de entrada: \
+     {\
+    "clave": "cAqXJvZC9A/iwx9umLC//Q==",\
+    "metodo":"AES256"\
+}
+
+
++ El sistema cuenta
 
 ## Construido con 🛠️
 
@@ -54,5 +70,5 @@ Para la presentación se utilizó Jsf y Primefaces con la ayuda del modelo mvc d
 Versión 1.0.0 con fecha fin 03-10-2021
 
 ## Autores ✒️
-Yoan Hernández Méndez
+Yoan Hernández Méndez /n
 correo: yoanhmz@gmail.com
