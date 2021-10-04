@@ -30,14 +30,18 @@ Para comenzar con el levantamiento del ambiente se necesitan tener instalado los
 ### Instalación 🔧
 
 Se asume que el proceso lo realizará una persona con el nivel necesario para el levantamiento del mismo.
-
-Una vez se instale
-
+Dentro de la carpeta ArchivoPropiedades se encuentran 2 ficheros de configuración: el inventario-vacuna-web.properties y el inventario-vacuna-ws.properties.
+Estos archivos una vez se definan cuál será su destino deben de copiar la ubicación donde se encuentra y sobrescribir la que ya se encuentra parametrizado en cada uno de los proyectos a los que hace referencia según el nombre de los mismo.
++ Se debe instalar el template avalon-theme-2.1.2.jar con el maven de forma manual con el siguiente comando:
+  mvn install:install-file "-DgroupId=erp" "-DartifactId=avalon-theme" "-Dversion=2.1.2" "-Dpackaging=jar" "-Dfile=(ruta del archivo jar)/avalon-theme-2.1.2.jar"
++ El aplicativo está configurado para funcionar en el puerto 5800
++ Caso que requiera modificar el puerto de escucha debe de ir a cada uno de los archivos de cada proyecto y configurar. En el caso del inversiones-vacuna-login hay que exportar el war.
 
 ## Despliegue 📦
 + Desplegar en el servidor de aplicaciones inventario-vacuna-login.war que se encuentra dentro del archivo War Login o mediante el maven o cualquier herramienta exportarlo como .war
-+ ubicarse en la carpeta raíz de cada proyecto y ejecutar el comando maven (mvn clean install) pero antes revisar el archivo de propiedad ahi se les actualiza las dependencias de cada proyecto y se les genera un war dentro de la carpeta target siguiendo el orden iventario-vacuna-bdd,iventario-vacuna-dto,iventario-vacuna-utilitario,iventario-vacuna-ws,iventario-vacuna-web
-
++ ubicarse en la carpeta raíz de cada proyecto y ejecutar el comando maven (mvn clean install) de cada proyecto y se les genera un war dentro de la carpeta target siguiendo el orden inventario-vacuna-bdd,inventario-vacuna-dto,inventario-vacuna-utilitario,inventario-vacuna-ws,inventario-vacuna-web,inventario-vacuna-ws
++ La url para comenzar a utilizar el sistema es: http://localhost:5800/inventario-vacuna-login/
++ Ya estaría listo para comenzar la prueba.
 
 ## Construido con 🛠️
 
