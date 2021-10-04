@@ -7,6 +7,14 @@ o de un Empleado asi como el contro y registro del esquema de vacunación comple
 El desarrollo del proyeto fue realizado bajo un ambiente de máquina local. Las descripciones para el levantamiento del mismo
 serán bajo las misma descripciones.
 
+El Proyecto está dividido por pequeños mini-proyecto
+1-inventario-vacuna-bdd (Aqui se encuentran las clases que mapean todas las tablas de la base datos)
+2-inventario-vacuna-dto (Aqui se encuentran las clases pojos utilizadas para transformar los objetos de la base y poder realizar todas las acciones que el proyecto requiera)
+3-inventario-vacuna-utilitario (Aqui se encuentran metodos, enumeradores, constantes, casteo toda herramienta que puede utilizar en cualquier momento dentro del proyecto)
+4-inventario-vacuna-token (Este es uno de los proyecto mas importantes, es el encargado de crear un token con Spring y JWT el cual es utilizado en cada petición realizada lo que brinda una capa de seguridad avanzada)
+5- inventario-vacuna-login (Proyecto web de JSF que mediante el ingreso de un usuario y clave se valida la información ingresada y de ser correcto se realiar la petición de crear un token de autenticación)
+6-inventario-vacuna-ws (Proyecto backend donde se encuentran todos los servicios REST que permitirán realizar una acción. Este proyecto tiene un interceptor que valida si el token es correcto para poder coontinuar con la petición)
+7-inventario-vacuna-web (Por último tenemos el proyecyo web de interación con el usuario desrrollada bajo la tecnología de primefaces con Spring Boot)
 
 ### Pre-requisitos 📋
 
@@ -15,46 +23,14 @@ Para comenzar con el levantamiento del ambiente se necesitan tener instalado los
 2- Un servidor de base dato Postgresql-v12.
 3- Como servidor de aplicaciones Wildfly19 aunque puede ser una superior.
 4- Maven para la descarga de Jar necesarios.
-```
-Da un ejemplo
+5- Configurar variable de entorno de JAVA_HOME(para java) y de M2_HOME(para maven)
 
 ### Instalación 🔧
 
-_Una serie de ejemplos paso a paso que te dice lo que debes ejecutar para tener un entorno de desarrollo ejecutandose_
+Se asume que el proceso lo realizará una persona con el nivel necesario para el levantamiento del proyecto.
 
-_Dí cómo será ese paso_
+Una vez se instale
 
-```
-Da un ejemplo
-```
-
-_Y repite_
-
-```
-hasta finalizar
-```
-
-_Finaliza con un ejemplo de cómo obtener datos del sistema o como usarlos para una pequeña demo_
-
-## Ejecutando las pruebas ⚙️
-
-_Explica como ejecutar las pruebas automatizadas para este sistema_
-
-### Analice las pruebas end-to-end 🔩
-
-_Explica que verifican estas pruebas y por qué_
-
-```
-Da un ejemplo
-```
-
-### Y las pruebas de estilo de codificación ⌨️
-
-_Explica que verifican estas pruebas y por qué_
-
-```
-Da un ejemplo
-```
 
 ## Despliegue 📦
 
@@ -62,22 +38,14 @@ _Agrega notas adicionales sobre como hacer deploy_
 
 ## Construido con 🛠️
 
-_Menciona las herramientas que utilizaste para crear tu proyecto_
-
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - El framework web usado
-* [Maven](https://maven.apache.org/) - Manejador de dependencias
-* [ROME](https://rometools.github.io/rome/) - Usado para generar RSS
-
-## Contribuyendo 🖇️
-
-Por favor lee el [CONTRIBUTING.md](https://gist.github.com/villanuevand/xxxxxx) para detalles de nuestro código de conducta, y el proceso para enviarnos pull requests.
-
-## Wiki 📖
-
-Puedes encontrar mucho más de cómo utilizar este proyecto en nuestra [Wiki](https://github.com/tu/proyecto/wiki)
+Las tecnología utilizadas para el desarrollo, para el backend Java como leguaje de programación con la ayuda del framework de Spring Boot.
+Para la capa del acceso a datos, se utilizó hibernate, jpql, repository y Postgresql como motor de base datos
+Para la presentación se utilizó Jsf y Primefaces con la ayuda del modelo mvc del Spring Boot
 
 ## Versionado 📌
 
-Usamos [SemVer](http://semver.org/) para el versionado. Para todas las versiones disponibles, mira los [tags en este repositorio](https://github.com/tu/proyecto/tags).
+Versión 1.0.0 con fecha fin 03-10-2021
 
 ## Autores ✒️
+Yoan Hernández Méndez
+correo: yoanhmz@gmail.com
